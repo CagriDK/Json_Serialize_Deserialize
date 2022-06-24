@@ -1,0 +1,40 @@
+{
+    "freq" : 50.0,
+    "csv" : true,
+    "mode" : "bites",
+    "_" : "bites / avikon / combined",
+    "missile" : {
+        "impact_radius" : 1000.0,
+        "rcs" : 0.1
+    },
+    "avikon" : {
+        "address" : "110.10.8.255",
+        "port" : 37020
+    },
+    "external_data" : {
+        "1source" : "adsb-telemetry-radar-none",
+		"reference" : "telemetry",
+        "source" : "radar",
+        "radar" : {
+            "help" : "if 'radar' selected as 'source', use these settings.",
+            "use_kalman" : false,
+            "covariance_factor" : 1.0
+        },
+        "telemetry" : {
+            "comm" : ["udp", "9192"],
+            "covariance_factor" : 25.0,
+            "filter" : false,
+            "timeout" : 300.0
+        },
+        "adsb" : {
+            "flight_filter" : "",
+            "adapter": "airnav",
+            "airnav" : {
+                "_" : "Set RadarBox address in host field.",
+                "host" : "127.0.0.1",
+                "port" : 5000,
+                "log_filter" : ""
+            }
+        }
+    }
+}
